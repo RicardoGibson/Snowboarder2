@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        SurfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
+        surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
     }
 
     // Update is called once per frame
