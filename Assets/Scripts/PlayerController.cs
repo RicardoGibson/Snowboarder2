@@ -20,9 +20,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
+        if(canMove)
+        {
+            RotatePlayer();
         RespondToBoost();
+        }
     }
+
+    public void DisableControls()
+    {
+        canMove = false;
+    }
+
     void RespondToBoost()
     {
         if (Input.GetKey(KeyCode.UpArrow))

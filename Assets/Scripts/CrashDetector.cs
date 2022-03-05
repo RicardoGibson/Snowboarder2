@@ -9,6 +9,7 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] float loadDelay = 0.5f;
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
+    private init whatever;
     // Start is called before the first frame update
     
     
