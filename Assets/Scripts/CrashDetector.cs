@@ -10,10 +10,17 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
     // Start is called before the first frame update
-   void OnTriggerEnter2D(Collider2D other)
+    
+    
+    bool hasCrashed = false;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-      if(other.tag == "Ground")
+      if(other.tag == "Ground" && !hasCrashed)
       {
+
+          hasCrashed = true;
+          FindObjectOfType<PlayerController>().DisableControls();
           crashEffect.Play();
           GetComponent<AudioSource>().PlayOneShot(crashSFX);
           Invoke("ReloadScene", loadDelay);
